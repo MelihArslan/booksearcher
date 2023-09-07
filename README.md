@@ -7,7 +7,7 @@ Welcome to the BookSearcher web service, a tool for searching and filtering book
 This documentation will guide you through the service's features, how to get started, and the reasoning behind certain design choices.
 
 # Getting Started
-###Prerequisites
+### Prerequisites
 
 Before using the BookSearcher web service, ensure you have the following prerequisites installed:
 
