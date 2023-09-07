@@ -33,6 +33,9 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public BookList searchBooks(String query, String language, int limit) {
+        // Google automatically returns default language (English) if it can't recognize language, so no need to check for that
+        if (query == null || query.equals("")) return null;
+
         // Build the URI for the Google Books API request
         String apiUrl = buildApiUrl(query, language, limit);
 

@@ -1,0 +1,59 @@
+openapi: 3.0.3
+info:
+  title: BookSearcher API
+  version: 1.0.0
+  description: API for searching books with Google Books API
+  contact:
+    name: Melih Arslan
+paths:
+  /books/search:
+    get:
+      summary: Search Books
+      parameters:
+        - in: query
+          name: query
+          required: true
+          schema:
+            type: string
+          description: The search query.
+        - in: query
+          name: language
+          required: true
+          schema:
+            type: string
+          description: The language for filtering results.
+        - in: query
+          name: limit
+          required: true
+          schema:
+            type: integer
+          description: The maximum number of results.
+      responses:
+        '200':
+          description: A list of books.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BookList'
+components:
+  schemas:
+    BookList:
+      type: object
+      properties:
+        books:
+          type: array
+          items:
+            $ref: '#/components/schemas/Book'
+    Book:
+      type: object
+      properties:
+        title:
+          type: string
+        authors:
+          type: array
+          items:
+            type: string
+        isbn:
+          type: string
+        publicationDate:
+          type: string

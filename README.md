@@ -24,6 +24,9 @@ Before using the BookSearcher web service, ensure you have the following prerequ
 4. Start the Spring Boot backend server:
 `mvn spring-boot:run`
 
+# API Documentation
+SwaggerUI documentation of the API is available at [http://localhost:8080/](http://localhost:8080/).
+
 # Design Choices
 ### Spring Boot and Maven
 The choice of using Spring Boot and Maven for this project is rooted in my extensive experience gained through a combination of education and professional work.
